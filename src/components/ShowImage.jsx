@@ -6,8 +6,11 @@ function ShowImage() {
   const [posts, setPosts] = useState([]);
 
   const getPost = async () => {
+    const count = 20;
+    const page = 1;
+
     const response = await getPosts.get('/instargram_post');
-    const data = response.data.filter(post => post.id < 20 * 1);
+    const data = response.data.filter(post => post.id < count * page);
     setPosts(data);
   };
 
