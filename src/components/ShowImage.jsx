@@ -10,11 +10,12 @@ function ShowImage() {
 
     const response = await getPosts.get('/instargram_post');
     const data = response.data.filter(post => post.id < count * page);
-    setPosts([...posts, ...data]);
+    setPosts([...data]);
+    console.log('data', data)
   };
 
   useEffect(() => {
-    getPost(20, { page });
+    getPost(20, page);
   }, [page]);
 
   const handleScroll = () => {
