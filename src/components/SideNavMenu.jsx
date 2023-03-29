@@ -22,7 +22,7 @@ const SideNavMenu = () => {
 export default SideNavMenu
 
 const StMoreDivWrap = styled.div`
-    font-size: 25px;
+    font-size: 20px;
     width: 250px;
     border: none;
     border-radius: 10px;

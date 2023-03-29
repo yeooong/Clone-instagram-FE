@@ -1,6 +1,7 @@
 import React from "react"
 import Posts from "src/components/Posts"
 import SideNav from "src/components/SideNav"
+import TopNavBar from "src/components/TopNavBar"
 import styled from "styled-components"
 
 
@@ -8,11 +9,11 @@ const Main = () => {
 
   return (
     <MainWrap>
-      <StHeader>
+      <StSideNav>
         <SideNav />
-      </StHeader>
-
+      </StSideNav>
       <section>
+        <TopNavBar />
         <Posts />
       </section>
     </MainWrap>
@@ -21,7 +22,7 @@ const Main = () => {
 
 export default Main
 
-const StHeader = styled.div`
+const StSideNav = styled.div`
   height: 100%;
   width: 300px;
   position: fixed;

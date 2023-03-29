@@ -39,11 +39,11 @@ const Posts = () => {
 
     return (
         <PostsWrap>
-                {posts?.map(post => {
-                    return (
-                        <Post key={post.postId} post={post} />
-                    );
-                })}
+            {posts?.map(post => {
+                return (
+                    <Post key={post.postId} post={post} />
+                );
+            })}
         </PostsWrap>
     )
 }
@@ -54,7 +54,7 @@ const PostsWrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     width: 900px;
     margin-left: 300px;
 `

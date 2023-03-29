@@ -1,18 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import logo from '../assets/img/instagram.png'
 import SideNavMenu from './SideNavMenu'
 
+
 const SideNav = () => {
+    const navigate = useNavigate();
 
     return (
-        <SideNavContainer>
-            <Logo>
-                <img src={logo} alt='User' width='120' height='60' />
-            </Logo>
+        <>
+            <SideNavContainer>
+                <Logo>
+                    <img src={logo} alt='User' width='120' height='60' onClick={()=>navigate('/main')}/>
+                </Logo>
+                <SideNavMenu />
+            </SideNavContainer>
+        </>
 
-            <SideNavMenu />
-        </SideNavContainer>
     )
 }
 
@@ -29,3 +34,4 @@ const SideNavContainer = styled.nav`
 const Logo = styled.div`
     display: flex;
 `
+
