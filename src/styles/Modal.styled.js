@@ -12,9 +12,3 @@ export const SModalBackground = styled.div`
   top: 0;
   text-align: center;
 `;
-
-export const SModalContent = styled.div`
-  width: 600px;
-  height: 600px;
-  background-color: white;
-`;
