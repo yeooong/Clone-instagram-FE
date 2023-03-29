@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
 
@@ -80,7 +80,7 @@ const Signup = () => {
             });
     };
 
-    // button disabled 
+    // 모든 조건을 충족할 때만 버튼 활성화
     const isDisabled = () => {
         return (
             errorMessage.emailError !== "" ||
@@ -132,8 +132,7 @@ const Signup = () => {
                 <button type="submit" disabled={isDisabled()}> 가입 </button >
             </form>
             <div>
-                계정이 있으신가요?
-                <Link to="/">로그인</Link>
+                계정이 있으신가요? <span onClick={()=>navigate('/')}>로그인</span>
             </div>
         </div>
 

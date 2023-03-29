@@ -2,7 +2,6 @@ import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
-import { Link } from 'react-router-dom'
 
 const Login = () => {
     const [user, setUser] = useState({
@@ -17,8 +16,9 @@ const Login = () => {
             .post(`${process.env.REACT_APP_SERVER}/login`, user)
             .then((response)=> {
                 if(response.request.status === 200) {
+                    document.cookie = `token=${response.data.token}`
                     alert(response.data.message)
-                    // navigate('/main')
+                    navigate('/main')
                 }
             })
     }
@@ -48,8 +48,7 @@ const Login = () => {
                 로그인
             </button >
             <div>
-                계정이 없으신가요?
-                <Link to="/signup">가입하기</Link>
+                계정이 없으신가요? <span onClick={()=>navigate('/signup')}>가입하기</span>
             </div>
         </form>
     )
