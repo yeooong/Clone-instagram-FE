@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import styled from 'styled-components';
 import Post from './Post';
 import SideNav from './SideNav';
 
@@ -36,17 +37,23 @@ const Posts = () => {
     }, [])
 
     return (
-        <>
-            <SideNav />
-            <section>
+        <PostsWrap>
                 {posts?.map(post => {
                     return (
                         <Post key={post.postId} post={post} />
                     );
                 })}
-            </section>
-        </>
+        </PostsWrap>
     )
 }
 
 export default Posts
+
+const PostsWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    border: 2px solid blue;
+    width: 766px;
+    height: 982px;
+    margin-left: 300px;
+`
