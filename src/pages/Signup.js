@@ -1,7 +1,8 @@
-import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import api from '../axios/api'
+
 
 const Signup = () => {
 
@@ -69,8 +70,8 @@ const Signup = () => {
         formData.append('nickname', user.nickname);
         formData.append('password', user.password);
 
-        const response = await axios
-            .post(`${process.env.REACT_APP_SERVER}/signup`, formData )
+        const response = await api
+            .post(`/signup`, formData )
             .then((response) => {
                 alert(response.data.message);
                 navigate("/");

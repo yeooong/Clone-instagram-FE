@@ -1,7 +1,7 @@
-import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
+import api from '../axios/api'
 
 const Login = () => {
     const [user, setUser] = useState({
@@ -12,10 +12,12 @@ const Login = () => {
     const navigate = useNavigate();
 
     const loginOnsubmitHandler = async (user) => {
-        const response = await axios
-            .post(`${process.env.REACT_APP_SERVER}/login`, user)
+        const response = await api
+            .post(`/login`, user)
             .then((response)=> {
                 if(response.request.status === 200) {
+                    // response body에 받아온 토큰 쿠키에 넣기
+                    console.log('response.data.token',response.data.token)
                     document.cookie = `token=${response.data.token}`
                     alert(response.data.message)
                     navigate('/main')

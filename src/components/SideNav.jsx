@@ -1,18 +1,17 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import logo from '../assets/img/instagram.png'
-import Menu from './Menu'
+import SideNavMenu from './SideNavMenu'
 
 const SideNav = () => {
 
     return (
         <SideNavContainer>
             <Logo>
-                <img src={logo} alt='Instagram' width='120' height='60' />
+                <img src={logo} alt='User' width='120' height='60' />
             </Logo>
 
-            <Menu />
-
+            <SideNavMenu />
         </SideNavContainer>
     )
 }
@@ -20,11 +19,13 @@ const SideNav = () => {
 export default SideNav
 
 const SideNavContainer = styled.nav`
+    height: 90%;
     display: flex;
     flex-direction: column;
+    padding: 30px;
+    justify-content: space-between;
 `
 
 const Logo = styled.div`
     display: flex;
-    padding: 20px;
 `

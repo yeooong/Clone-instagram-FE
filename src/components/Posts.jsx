@@ -2,20 +2,21 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import Post from './Post';
-import SideNav from './SideNav';
 
 const Posts = () => {
     const [posts, setPosts] = useState([]);
     const [page, setPage] = useState(1)
 
-    useEffect(() => {
-        async function getPosts() {
-            const AUTH_TOKEN = document.cookie.split('=')[1];
-            axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
-            const response = await axios.get(`${process.env.REACT_APP_SERVER}/posts?pageSize=4&page=${page}`);
-            setPosts(prev => [...prev, ...response.data.postList]);
-        }
+    const getPosts = async () => {
+        // 쿠키에서 토큰 가져오기
+        const AUTH_TOKEN = document.cookie.split('=')[1];
+        // 토큰 request headers에 넣어보내기
+        axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+        const response = await axios.get(`${process.env.REACT_APP_SERVER}/posts?pageSize=4&page=${page}`);
+        setPosts(prev => [...prev, ...response.data.postList]);
+    }
 
+    useEffect(() => {
         getPosts();
     }, [page])
 
@@ -52,8 +53,8 @@ export default Posts
 const PostsWrap = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
     border: 2px solid blue;
-    width: 766px;
-    height: 982px;
+    width: 900px;
     margin-left: 300px;
 `
