@@ -10,5 +10,4 @@ export const SModalBackground = styled.div`
   position: fixed;
   left: 0;
   top: 0;
-  text-align: center;
 `;

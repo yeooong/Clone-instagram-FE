@@ -1,10 +1,11 @@
 import React from 'react';
 import arrow from 'src/assets/arrow.png';
+import { SPostModalBackIcon } from 'src/styles/PostModal.styled';
 
 function BackButton({ onCloseHandler }) {
   return (
     <button onClick={onCloseHandler}>
-      <img
+      <SPostModalBackIcon
         src={arrow}
         alt="이전으로"
       />

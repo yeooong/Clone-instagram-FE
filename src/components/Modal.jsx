@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { SModalBackground } from 'src/styles/Modal.styled';
 import CreatePostModal from './CreatePostModal';
 import DetailPostModal from './DetailPostModal';
@@ -11,8 +11,15 @@ function Modal({ onCloseHandler, type }) {
     detail: <DetailPostModal onCloseHandler={onCloseHandler} />,
   };
 
+  const background = useRef();
+
   return (
-    <SModalBackground onClick={onCloseHandler}>
+    <SModalBackground
+      ref={background}
+      onClick={e => {
+        if (e.target === background.current) onCloseHandler();
+      }}
+    >
       {modalTypeActions[type]}
     </SModalBackground>
   );

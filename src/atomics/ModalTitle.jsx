@@ -1,7 +1,8 @@
 import React from 'react';
+import { SPostModalH1 } from 'src/styles/PostModal.styled';
 
 function ModalTitle({ children }) {
-  return <h1>{children}</h1>;
+  return <SPostModalH1>{children}</SPostModalH1>;
 }
 
 export default ModalTitle;
