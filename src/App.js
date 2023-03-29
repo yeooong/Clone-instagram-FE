@@ -1,11 +1,9 @@
-import MakeImage from './components/MakeImage';
-import ShowImage from './components/ShowImage';
+import Router from './shared/Router';
 
 function App() {
   return (
-    <div className="App">
-      <MakeImage />
-      <ShowImage />
+    <div >
+      <Router />
     </div>
   );
 }
