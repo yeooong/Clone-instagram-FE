@@ -1,4 +1,5 @@
 import GlobalStyle from 'src/shared/GlobalStyle';
+import Router from './shared/Router';
 import Footer from './components/Footer';
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
     <>
       <GlobalStyle />
       <div className="App">
-        <Footer />
+        <Router />
       </div>
     </>
   );
