@@ -3,7 +3,6 @@ import React from 'react'
 import Signup from 'src/pages/Signup'
 import Login from 'src/pages/Login'
 import Main from 'src/pages/Main'
-import SideNav from 'src/components/SideNav'
 
 function Router() {
   return (

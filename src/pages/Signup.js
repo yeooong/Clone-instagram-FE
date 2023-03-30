@@ -13,7 +13,6 @@ const Signup = () => {
         email: "",
         nickname: "",
         password: "",
-        // profileImg: "",
     });
 
     // 프로필 이미지

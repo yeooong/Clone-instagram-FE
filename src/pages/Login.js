@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
-import {setCookie} from 'src/hooks/Cookie'
+import { setCookie } from 'src/hooks/Cookie'
 import api from '../axios/api'
 
 const Login = () => {
@@ -15,12 +15,12 @@ const Login = () => {
     const loginOnsubmitHandler = async (user) => {
         const response = await api
             .post(`/login`, user)
-            .then((response)=> {
-                if(response.request.status === 200) {
+            .then((response) => {
+                if (response.request.status === 200) {
                     // response body에 받아온 토큰 쿠키에 넣기
                     // console.log('response.data.token',response.data.token)
                     // document.cookie = `token=${response.data.token}`
-                    setCookie("token", response.data.token , 1)
+                    setCookie("token", response.data.token, 1)
                     alert(response.data.message)
                     navigate('/main')
                 }
@@ -28,10 +28,10 @@ const Login = () => {
     }
 
     return (
-        <form 
+        <form
             onSubmit={(e) => {
-            e.preventDefault();
-            loginOnsubmitHandler(user)
+                e.preventDefault();
+                loginOnsubmitHandler(user)
             }}
         >
             <input
@@ -52,7 +52,7 @@ const Login = () => {
                 로그인
             </button >
             <div>
-                계정이 없으신가요? <span onClick={()=>navigate('/signup')}>가입하기</span>
+                계정이 없으신가요? <span onClick={() => navigate('/signup')}>가입하기</span>
             </div>
         </form>
     )

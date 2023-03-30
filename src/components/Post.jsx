@@ -8,7 +8,6 @@ import StContent from './StContent'
 const Post = ({ post }) => {
     const [isLike, setIsLike] = useState(post.isLike)
     const [likeCount, setLikeCount] = useState(post.likeCount)
-    // console.log(Date())
 
     return (
         <StPostWrap key={post.postId}>
