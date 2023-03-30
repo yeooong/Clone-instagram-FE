@@ -24,8 +24,6 @@ const Posts = () => {
             alert(error.response.data.errorMessage);
             navigate('/');
         })
-  
-        
     }
 
     useEffect(() => {
@@ -66,7 +64,6 @@ const PostsWrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* border: 2px solid blue; */
     width: 900px;
     margin-left: 300px;
 `
