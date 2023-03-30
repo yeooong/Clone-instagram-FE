@@ -1,12 +1,16 @@
-import MakeImage from './components/MakeImage';
-import ShowImage from './components/ShowImage';
+import ModalTest from './components/ModalTest';
+import GlobalStyle from 'src/shared/GlobalStyle';
+import SideFooter from './components/SideFooter';
 
 function App() {
   return (
-    <div className="App">
-      <MakeImage />
-      <ShowImage />
-    </div>
+    <>
+      <GlobalStyle />
+      <div className="App">
+        {/* <ModalTest /> */}
+        <SideFooter />
+      </div>
+    </>
   );
 }
 
