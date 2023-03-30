@@ -1,9 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import styled, { StyleSheetManager } from "styled-components";
-import api from '../axios/api'
-import logo from '../assets/img/instagram.png'
+import api from '../../axios/api'
+import logo from '../../assets/img/instagram.png'
+import {
+    StSignupWrap, StSignupForm, Logo, Guide, 
+    StInputBox, StInput, StFileInputLabel, StFileInput, 
+    StSubmitButton, LoginNavBox, LoginNav
+} from './style'
 
 
 const Signup = () => {
@@ -100,7 +104,7 @@ const Signup = () => {
             <StSignupWrap>
                 <StSignupForm onSubmit={signupOnSubmitHandler}>
                     <Logo>
-                        <img src={logo} alt='User' width='200' height='100' onClick={() => window.location.replace('/main')} />
+                        <img src={logo} alt='User' width='200' height='100' onClick={() => window.location.replace('/')} />
                     </Logo>
                     <Guide>친구들의 사진과 동영상을 보려면 가입하세요.</Guide>
                     <StInputBox>
@@ -134,7 +138,7 @@ const Signup = () => {
                         <StFileInputLabel 
                         htmlFor="profileImg"
                         >
-                            profile image
+                            프로필 이미지를 업로드해주세요.
                         </StFileInputLabel>
                         <StFileInput
                             required
@@ -156,102 +160,3 @@ const Signup = () => {
 };
 
 export default Signup;
-// 380*580
-
-const StSignupWrap = styled.div`
-    border: 1px solid gray;
-    width: 400px;
-    height: 650px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 100px auto 0 auto;
-`
-
-const StSignupForm = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-`
-
-const Logo = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-`
-
-const Guide = styled.div`
-    display: flex;
-    max-width: 300px;
-    color: gray;
-    font-size: 20px;
-    text-align: center;
-    padding-bottom: 10px;
-    border-bottom: 1px solid gray;
-`
-
-const StInputBox = styled.div`
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-`
-
-const StInput = styled.input`
-    border: 1px solid gray;
-    background-color: #F9F9F9;
-    border-radius: 5px;
-    width: 300px;
-    height: 35px;
-    margin-top: 20px;
-    padding: 5px;
-`
-
-const StFileInputLabel = styled.label`
-    background-color: #52AFF4;
-    border-radius: 10px;
-    height: 20px;
-    width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    margin-top: 10px;
-    color: white;
-    cursor: pointer;
-`
-
-const StFileInput = styled.input`
-    display: none;
-`
-
-const StSubmitButton = styled.button`
-    background-color: #52AFF4;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 13px 150px 13px 150px;
-    margin-top: 10px;
-    color: white;
-    cursor: pointer;
-`
-
-const LoginNavBox = styled.div`
-    border: 1px solid gray;
-    width: 400px;
-    height: 100px;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
-
-const LoginNav = styled.span`
-    color: #52AFF4;
-`
