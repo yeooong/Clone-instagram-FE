@@ -1,10 +1,16 @@
-import Router from './shared/Router';
+import ModalTest from './components/ModalTest';
+import GlobalStyle from 'src/shared/GlobalStyle';
+import SideFooter from './components/SideFooter';
 
 function App() {
   return (
-    <div >
-      <Router />
-    </div>
+    <>
+      <GlobalStyle />
+      <div className="App">
+        {/* <ModalTest /> */}
+        <SideFooter />
+      </div>
+    </>
   );
 }
 
