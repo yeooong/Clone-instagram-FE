@@ -6,7 +6,7 @@ import logo from '../../assets/img/instagram.png'
 import {
     StSignupWrap, StSignupForm, Logo, Guide, 
     StInputBox, StInput, StFileInputLabel, StFileInput, 
-    StSubmitButton, LoginNavBox, LoginNav
+    StSubmitButton, StNavBox, StNav
 } from './style'
 
 
@@ -152,9 +152,9 @@ const Signup = () => {
                     <StSubmitButton type="submit" disabled={isDisabled()}> 가입 </StSubmitButton >
                 </StSignupForm>
             </StSignupWrap>
-            <LoginNavBox>
-                계정이 있으신가요?<LoginNav onClick={() => navigate('/')}>&nbsp;로그인</LoginNav>
-            </LoginNavBox>
+            <StNavBox>
+                계정이 있으신가요?<StNav onClick={() => navigate('/')}>&nbsp;로그인</StNav>
+            </StNavBox>
         </>
     )
 };

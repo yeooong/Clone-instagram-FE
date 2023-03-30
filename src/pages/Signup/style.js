@@ -83,7 +83,7 @@ export const StSubmitButton = styled.button`
     cursor: pointer;
 `
 
-export const LoginNavBox = styled.div`
+export const StNavBox = styled.div`
     border: 1px solid gray;
     width: 450px;
     height: 100px;
@@ -95,7 +95,7 @@ export const LoginNavBox = styled.div`
     align-items: center;
 `
 
-export const LoginNav = styled.span`
+export const StNav = styled.span`
     color: #52AFF4;
     cursor: pointer;
 `
