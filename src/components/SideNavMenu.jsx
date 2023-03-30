@@ -1,18 +1,23 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { deleteCookie } from 'src/hooks/Cookie';
 import styled from 'styled-components';
 
 const SideNavMenu = () => {
     const [view, setVeiw] = useState(false);
+    const navigate = useNavigate();
 
-    // const onClickLogout = () => {
-    //     document.cookie = token
-    // }
+    const onClickLogout = () => {
+        deleteCookie('token');
+        alert('로그인이 필요한 기능입니다.')
+        navigate('/');
+    }
 
     return (
         <StMoreDivWrap >
             <StMoreDiv onClick={() => { setVeiw(!view) }}>더 보기</StMoreDiv>
             <div>
-                {view && <StMenu >로그아웃</StMenu>}
+                {view && <StMenu onClick={onClickLogout} >로그아웃</StMenu>}
             </div>
         </StMoreDivWrap>
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
+import {setCookie} from 'src/hooks/Cookie'
 import api from '../axios/api'
 
 const Login = () => {
@@ -17,8 +18,9 @@ const Login = () => {
             .then((response)=> {
                 if(response.request.status === 200) {
                     // response body에 받아온 토큰 쿠키에 넣기
-                    console.log('response.data.token',response.data.token)
-                    document.cookie = `token=${response.data.token}`
+                    // console.log('response.data.token',response.data.token)
+                    // document.cookie = `token=${response.data.token}`
+                    setCookie("token", response.data.token , 1)
                     alert(response.data.message)
                     navigate('/main')
                 }

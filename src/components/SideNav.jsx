@@ -12,7 +12,7 @@ const SideNav = () => {
         <>
             <SideNavContainer>
                 <Logo>
-                    <img src={logo} alt='User' width='120' height='60' onClick={()=>navigate('/main')}/>
+                    <img src={logo} alt='User' width='120' height='60' onClick={()=>window.location.replace('/main')}/>
                 </Logo>
                 <SideNavMenu />
             </SideNavContainer>
