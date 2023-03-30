@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import React from 'react'
-import Signup from 'src/pages/Signup'
-import Login from 'src/pages/Login'
+import Signup from 'src/pages/Signup/Signup'
+import Login from 'src/pages/Login/Login'
 import Main from 'src/pages/Main'
 
 function Router() {
