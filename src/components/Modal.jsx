@@ -4,11 +4,11 @@ import CreatePostModal from './CreatePostModal';
 import DetailPostModal from './DetailPostModal';
 import UpdatePostModal from './UpdatePostModal';
 
-function Modal({ onCloseHandler, type }) {
+function Modal({ onCloseHandler, type, post }) {
   const modalTypeActions = {
     create: <CreatePostModal onCloseHandler={onCloseHandler} />,
-    update: <UpdatePostModal onCloseHandler={onCloseHandler} />,
-    detail: <DetailPostModal onCloseHandler={onCloseHandler} />,
+    update: <UpdatePostModal onCloseHandler={onCloseHandler} post={post}/>,
+    detail: <DetailPostModal onCloseHandler={onCloseHandler} post={post}/>,
   };
 
   const background = useRef();

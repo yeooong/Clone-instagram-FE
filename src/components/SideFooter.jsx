@@ -14,24 +14,36 @@ import {
 } from 'src/styles/SideFooter.styled';
 
 import profileImage from 'src/assets/weasel.png';
+import cat from 'src/assets/cat.jpeg';
+import junscat from 'src/assets/junscat.jpeg';
+import jjanggu from 'src/assets/jjanggu.jpeg';
+import node from 'src/assets/node.png';
 
 function SideFooter() {
   return (
     <SSideFooter>
-      <SSideFooterUserWrap>
-        <SSideFooterUserImg
-          src={profileImage}
-          alt="유저 프로필 사진"
-        />
-        <SSideFooterUserNickname>리액트 개발자 엄진식</SSideFooterUserNickname>
-      </SSideFooterUserWrap>
       <div>
         <SSideFooterH1>회원님을 위한 추천</SSideFooterH1>
         <ul>
-          <SSideFooterLi>
+        <SSideFooterLi>
             <SSideFooterWrap>
               <SSideFooterTeamUserImg
                 src={profileImage}
+                alt="유저 프로필 사진"
+              />
+              <div>
+                <SSideFooterTeamUserNickname>
+                리액트 개발자 엄진식
+                </SSideFooterTeamUserNickname>
+                <SSideFooterP>회원님을 위한 추천</SSideFooterP>
+              </div>
+            </SSideFooterWrap>
+            <a href="https://github.com/MyungAe" target="_blank">깃허브</a>
+          </SSideFooterLi>
+          <SSideFooterLi>
+            <SSideFooterWrap>
+              <SSideFooterTeamUserImg
+                src={jjanggu}
                 alt="유저 프로필 사진"
               />
               <div>
@@ -41,12 +53,12 @@ function SideFooter() {
                 <SSideFooterP>회원님을 위한 추천</SSideFooterP>
               </div>
             </SSideFooterWrap>
-            <a href="#">깃허브</a>
+            <a href="https://github.com/yeooong" target="_blank">깃허브</a>
           </SSideFooterLi>
           <SSideFooterLi>
             <SSideFooterWrap>
               <SSideFooterTeamUserImg
-                src={profileImage}
+                src={cat}
                 alt="유저 프로필 사진"
               />
               <div>
@@ -56,12 +68,12 @@ function SideFooter() {
                 <SSideFooterP>회원님을 위한 추천</SSideFooterP>
               </div>
             </SSideFooterWrap>
-            <a href="#">깃허브</a>
+            <a href="https://github.com/ryu820" target="_blank">깃허브</a>
           </SSideFooterLi>
           <SSideFooterLi>
             <SSideFooterWrap>
               <SSideFooterTeamUserImg
-                src={profileImage}
+                src={junscat}
                 alt="유저 프로필 사진"
               />
               <div>
@@ -71,12 +83,12 @@ function SideFooter() {
                 <SSideFooterP>회원님을 위한 추천</SSideFooterP>
               </div>
             </SSideFooterWrap>
-            <a href="#">깃허브</a>
+            <a href="https://github.com/Bruni95" target="_blank">깃허브</a>
           </SSideFooterLi>
           <SSideFooterLi>
             <SSideFooterWrap>
               <SSideFooterTeamUserImg
-                src={profileImage}
+                src={node}
                 alt="유저 프로필 사진"
               />
               <div>
@@ -86,7 +98,7 @@ function SideFooter() {
                 <SSideFooterP>회원님을 위한 추천</SSideFooterP>
               </div>
             </SSideFooterWrap>
-            <a href="#">깃허브</a>
+            <a href="https://github.com/chanwoongpark97" target="_blank">깃허브</a>
           </SSideFooterLi>
         </ul>
       </div>

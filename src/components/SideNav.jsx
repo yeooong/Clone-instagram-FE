@@ -12,7 +12,7 @@ const SideNav = () => {
         <>
             <SideNavContainer>
                 <Logo>
-                    <img src={logo} alt='User' width='120' height='60' onClick={()=>window.location.replace('/main')}/>
+                    <LogoImg src={logo} alt='User' onClick={()=>window.location.replace('/main')}/>
                 </Logo>
                 <SideNavMenu />
             </SideNavContainer>
@@ -28,10 +28,13 @@ const SideNavContainer = styled.nav`
     display: flex;
     flex-direction: column;
     padding: 30px;
-    justify-content: space-between;
+    
 `
 
 const Logo = styled.div`
     display: flex;
 `
-
+const LogoImg = styled.img`
+    width: 120px;
+    height: 60px;
+`

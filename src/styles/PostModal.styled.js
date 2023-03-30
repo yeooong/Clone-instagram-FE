@@ -113,6 +113,8 @@ export const SPostModalUpdateImage = styled.img`
   min-height: 520px;
   max-width: 800px;
   max-height: 600px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 
   ${props =>
     !props.type &&
@@ -147,7 +149,7 @@ export const SPostModalUserImage = styled.img`
 
 export const SPostModalComment = styled.div``;
 
-export const SPostModalCommentInputWrap = styled.div`
+export const SPostModalCommentInputWrap = styled.form`
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -158,8 +160,8 @@ export const SPostModalCommentInputWrap = styled.div`
 export const SPostModalCommentInput = styled.input`
   min-width: 195px;
   min-height: 30px;
-  width: inherit;
   max-width: 400px;
+  width: inherit;
 `;
 
 export const SPostModalCommentWrap = styled.div`

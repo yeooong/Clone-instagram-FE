@@ -6,7 +6,7 @@ export const SModalBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: rgba(0,0,0,0.65);
   position: fixed;
   left: 0;
   top: 0;

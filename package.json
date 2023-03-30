@@ -21,6 +21,7 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "deploy": "yarn run build && aws s3 sync build/ s3://10-clone-bucket",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

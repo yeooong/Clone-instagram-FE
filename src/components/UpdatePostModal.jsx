@@ -13,24 +13,21 @@ import ModalHeader from 'src/molecules/ModalHeader';
 import ModalTitle from 'src/atomics/ModalTitle';
 import DoneButtonInUpdate from 'src/atomics/DoneButtonInUpdate';
 import TextBackButton from 'src/atomics/TextBackButton';
-import postApi from 'src/api/postHandlingApi';
+import api from 'src/axios/api'
 
 import defaultImage from 'src/assets/add-image.png';
 import profileImage from 'src/assets/weasel.png';
-import jerry from 'src/assets/jerry.gif';
-import cheeseDuck from 'src/assets/cheeseduck.png';
 
-function UpdatePostModal({ onCloseHandler, image }) {
-  const preview = cheeseDuck;
-  const [post, setPost] = useState({
-    content: '',
+function UpdatePostModal({ onCloseHandler, post }) {
+  
+  const getToken = () => {
+    const tokenString = document.cookie.split('=')[1]
+    return tokenString
+  }
+
+  const [postComment, setPostComment] = useState({
+    content: post.content,
   });
-
-  const onSubmitPostHandler = async () => {
-    const response = await postApi.post('/posts', post);
-    console.log(response);
-    onCloseHandler();
-  };
 
   return (
     <SPostModal>
@@ -39,7 +36,8 @@ function UpdatePostModal({ onCloseHandler, image }) {
         <ModalTitle>정보 수정</ModalTitle>
         <DoneButtonInUpdate
           onCloseHandler={onCloseHandler}
-          post={post}
+          comment={postComment}
+          postId={post.postId}
         >
           완료
         </DoneButtonInUpdate>
@@ -47,24 +45,24 @@ function UpdatePostModal({ onCloseHandler, image }) {
       <SPostModalForm>
         <SPostModalUploadImageWrap>
           <SPostModalUpdateImage
-            src={preview ? preview : defaultImage}
-            type={preview}
+            src={`${process.env.REACT_APP_SERVER}/${post.img}`}
+            type='uploaded'
             alt="업로드이미지"
           />
         </SPostModalUploadImageWrap>
         <SPostModalFormWrap>
           <SPostModalUserProfileWrap>
             <SPostModalUserImage
-              src={profileImage}
+              src={`${process.env.REACT_APP_SERVER}/${post.profileImg}`}
               alt="유저 프로필 사진"
             />
-            <div>Jinsik_eum</div>
+            <div>{post.nickname}</div>
           </SPostModalUserProfileWrap>
           <SPostModalFormTextarea
             type="text"
             placeholder="문구 입력"
-            value={post.content}
-            onChange={e => setPost({ ...post, content: e.target.value })}
+            value={postComment.content}
+            onChange={e => setPostComment({ content: e.target.value })}
           />
         </SPostModalFormWrap>
       </SPostModalForm>

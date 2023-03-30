@@ -1,12 +1,8 @@
 import React from 'react';
 import api from 'src/api/postHandlingApi';
 
-function DoneButtonInCreate({ onCloseHandler, children }) {
-  const sendRequest = async requestBody => {
-    const response = await api.post('/', requestBody);
-    return response;
-  };
-  return <button onClick={onCloseHandler}>{children}</button>;
+function DoneButtonInCreate({ onSubmitHandler, children }) {
+  return <button onClick={onSubmitHandler}>{children}</button>;
 }
 
 export default DoneButtonInCreate;

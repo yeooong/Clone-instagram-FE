@@ -5,8 +5,8 @@ const StContent = ({ content }) => {
     const [limit, setLimit] = useState(5);
     const moreToggle = (str, limit) => {
         return {
-            str: str.slice(0, limit),
-            isShowMore: str.length > limit
+            str: str?.slice(0, limit),
+            isShowMore: str?.length > limit
         }
     };
     

@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 export const SSideFooter = styled.footer`
   max-width: 300px;
-  /* max-height: 300px; */
-  border: 1px solid black;
+  max-height: 500px; 
+  // border: 1px solid black;
   padding: 20px;
+  margin: 130px 0 0 20px;
 `;
 
 export const SSideFooterH1 = styled.h1`

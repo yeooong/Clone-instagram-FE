@@ -3,6 +3,7 @@ import Posts from "src/components/Posts"
 import SideNav from "src/components/SideNav"
 import TopNavBar from "src/components/TopNavBar"
 import styled from "styled-components"
+import SideFooter from "src/components/SideFooter"
 
 
 const Main = () => {
@@ -16,6 +17,7 @@ const Main = () => {
         <TopNavBar />
         <Posts />
       </section>
+      <SideFooter />
     </MainWrap>
   )
 }
@@ -28,7 +30,7 @@ const StSideNav = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  border-right: 2px solid gray;
+  border-right: 1.5px solid lightgray;
 `
 
 const MainWrap = styled.div`

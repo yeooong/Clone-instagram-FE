@@ -16,9 +16,8 @@ import {
 } from 'src/styles/PostModal.styled';
 import ModalHeader from 'src/molecules/ModalHeader';
 import ModalTitle from 'src/atomics/ModalTitle';
-import DoneButtonInUpdate from 'src/atomics/DoneButtonInUpdate';
-import postApi from 'src/api/postHandlingApi';
-
+import api from 'src/axios/api.js'
+import DoneButtonInCreate from 'src/atomics/DoneButtonInCreate';
 import defaultImage from 'src/assets/add-image.png';
 import profileImage from 'src/assets/weasel.png';
 
@@ -33,19 +32,27 @@ function CreatePostModal({ onCloseHandler }) {
   const [preview, setPreview] = useState('');
 
   const onChangeFileHandler = e => {
-    // set file
-    setPost({ ...post, img: e.target.files[0] });
-
     // set preview file
     const reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
     reader.onloadend = () => setPreview(reader.result);
+
+    // set file
+    setPost({ ...post, img: e.target.files[0] });
   };
 
   const onSubmitPostHandler = async () => {
-    const response = await postApi.post('/posts', post);
+    const formData = new FormData();
+    formData.append('img', post.img)
+    formData.append('content', post.content)
+
+    const response = await api.post('/posts', formData)
+                    .then(() => {alert('게시물 작성에 성공하셨습니다')})
+                    .catch((response) => {console.log(response)});
+
     console.log(response);
     onCloseHandler();
+    window.location.reload()
   };
 
   return (
@@ -53,9 +60,9 @@ function CreatePostModal({ onCloseHandler }) {
       <ModalHeader>
         <BackButton onCloseHandler={onCloseHandler} />
         <ModalTitle>새 게시물 만들기</ModalTitle>
-        <DoneButtonInUpdate onCloseHandler={onSubmitPostHandler}>
+        <DoneButtonInCreate onSubmitHandler={onSubmitPostHandler}>
           공유하기
-        </DoneButtonInUpdate>
+        </DoneButtonInCreate>
       </ModalHeader>
       <SPostModalForm>
         <SPostModalImageWrap>
@@ -81,7 +88,7 @@ function CreatePostModal({ onCloseHandler }) {
               src={profileImage}
               alt="유저 프로필 사진"
             />
-            <div>Jinsik_eum</div>
+            <div>Post Writer</div>
           </SPostModalUserProfileWrap>
           <SPostModalFormTextarea
             type="text"
