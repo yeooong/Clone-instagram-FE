@@ -1,14 +1,12 @@
-import ModalTest from './components/ModalTest';
 import GlobalStyle from 'src/shared/GlobalStyle';
-import SideFooter from './components/SideFooter';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <>
       <GlobalStyle />
       <div className="App">
-        {/* <ModalTest /> */}
-        <SideFooter />
+        <Footer />
       </div>
     </>
   );
